@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/tables.css">
+    <link rel="stylesheet" href="/stylesheets/admHome.css">
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="body_contain">
+        <!--------- DASHBOARD MENU --------->
+        <section class="dash_menu ">
+            <a href="/" class="links">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                        alt="logo">
+                    </div>
+                </div>
+            </a>
+            <div class="profil_info">
+                <div class="profile_photo">
+                    <img src="https://images.unsplash.com/photo-1627161684458-a62da52b51c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=549&q=80" alt="">
+                </div>
+                <span><%= my_session.adm_fnm %> <%= my_session.adm_lnm %></span>
+                <h4>Admin</h4>
+            </div>
+            <div class="dash_opts">
+                
+                <details class="option">
+                    <summary><a href="/admin"><i class="fa-solid fa-house-user"></i>Dashboard</a></summary>
+                </details>
+
+                <details class="option">
+                    <summary><a href="/admin/members" title="View All Members"><i class="fa-solid fa-users"></i>Members</a></summary>
+                </details>
+
+                <details class="option">
+                    <summary><i class="fa-solid fa-clipboard"></i>Membership<i class="fas fa-angle-down"></i></summary>
+                    <p><a href="/admin/manage-packages" title="Add a New Membership Package"><i class="fa-solid fa-circle-plus"></i> Manage Packages</a></p>
+                </details>
+
+                <details class="option">
+                    <summary><a href="" title="View and Manage All Classes"><i class="fa-solid fa-child-reaching"></i>Classes</a></summary>
+                </details>
+            </div>        
+        </section>
+    
+
+        <!--------- BODY / MAIN --------->
+        <section class="body_main ">
+            <div class="top_bar">
+                <div onclick="hideMenu()" title="Side Bar" class="menu_bars ">
+                <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <h1>MEMBERS LIST</h1>
+
+            <div class="search">
+                <form action="/admin/member-search">
+                    <input type="search" name="mbr_fnm" placeholder="Search by First Name">
+                    <button type="submit" class="btn_srch">Search</button>
+                </form>
+            </div>
+
+            <div class="table-contain">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>D.O.B.</th>
+                            <th>Phone Number</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Membership</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(data.length){
+               
+                            for(var i = 0; i< data.length; i++) {%>  
+                                <tr>
+                                    <th><%= data[i].id %></th>
+                                    <td><%= data[i].mbr_fnm%></td>
+                                    <td><%= data[i].mbr_lnm%></td>
+                                    <td><%= data[i].gndr%></td>
+                                    <td><%= new Date(data[i].mbr_dob).toLocaleDateString()%></td>
+                                    <td><%= data[i].mbr_phn%></td>
+                                    <td><%= data[i].mbr_adrs%></td>
+                                    <td><%= data[i].mbr_email%></td>
+                                    <td><%= data[i].mshp_nm%></td>
+                                    <td><%= data[i].sts%></td>
+                                    <!-- <td colspan="2">
+                                        <a href="/admin/edit-book/<%=data[i].id%>" title="Edit or replace this book"><i class="fa-solid fa-pencil"></i></a>                                                                                       
+                                        <a href="/admin/delete-book/<%=data[i].id%>" title="Delete this book"><i class="fa-solid fa-trash-can"></i></a>                                            
+                                    </td> -->
+                                </tr>
+                            <% }
+                        }else{ %>
+                            <tr>
+                                <td colspan="11"><h2>No Members</h2>
+                                    <div>
+                                        <img src="https://assets.materialup.com/uploads/c83a9663-be0b-4397-b1af-67f520e44ef1/preview.png" alt="">
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    <script>
+        function hideMenu(){
+            document.querySelector('.dash_menu').classList.toggle('showHide');
+            document.querySelector('.body_main').classList.toggle('width_adjust');
+        }
+    </script>
+</body>
+</html>

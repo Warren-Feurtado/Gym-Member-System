@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                    alt="logo">
+                </div>
+                <!-- <div class="logo_txt">
+                    <span style="font-size: 1.2vw;">
+                        b.fit
+                    </span>
+                    <span style="font-size: 1.6vw;">
+                        Gym
+                    </span>
+                    <h2 style="font-size: 1vw;">
+                        School Library
+                    </h2>
+                </div> -->
+            </div>
+        </a>
+
+        <!-- <div class="search">
+            <input type="search" placeholder="Type to search">
+        </div> -->
+      
+        <div class="nav_links">
+            <!-- <a href="/admin/books" class="link">Books</a>
+            <a href="" class="link">Categories</a> -->
+
+            <a href="/" class="link">Home</a>
+            <a href="/user/membership-packages" class="link">Membership</a>
+            <a href="" class="link">Classes</a>
+            <div class="log_link">
+                <% if(my_session.loggedin == true){ %>
+                    <a href="/auth/logout" class="link"><i class="fa-solid fa-user-large"></i>Log out</a>
+                <% }else{ %>
+                    <a href="/auth/user" class="link"><i class="fa-solid fa-user-large"></i>Log in</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="body_contain">
+        <div class="left">
+            <h1 style="text-align: center; color: white; margin-top: 2vw;">WELCOME ADMIN</h1>
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/couple-doing-exercise-in-the-gym-2511564-2117903.png" alt="" style="width: 50vw; left: -3vw;">
+            <a href="/"><span class="diamond"></span></a>
+        </div>
+        <div class="right">
+            <form action="/auth/admin/check" method="post">
+                <h1>ADMIN LOG IN</h1>
+                <div class="inptBx">
+                    <label for="adm_email">Email <span style="color: red;">*</span></label><br>
+                    <input type="email" id="adm_email" name="email" placeholder="Email Address">
+                </div>
+                <div class="inptBx">
+                    <label for="adm_pss">Password <span style="color: red;">*</span></label><br>
+                    <input type="password" id="adm_pss" name="password" placeholder="Password">
+                </div>
+
+                <button class="frm_btn" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log in</button>
+                <span>Not Yet a Member? <a href="/user/sign-up">Sign Up Here.</a></span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

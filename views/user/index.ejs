@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+      
+  </head>
+    <body>
+        <nav>
+            <a href="/">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                        alt="logo">
+                    </div>
+                    <!-- <div class="logo_txt">
+                        <span style="font-size: 1.2vw;">
+                            b.fit
+                        </span>
+                        <span style="font-size: 1.6vw;">
+                            Gym
+                        </span>
+                        <h2 style="font-size: 1vw;">
+                            School Library
+                        </h2>
+                    </div> -->
+                </div>
+            </a>
+
+            <!-- <div class="search">
+                <input type="search" placeholder="Type to search">
+            </div> -->
+          
+            <div class="nav_links">
+                <!-- <a href="/admin/books" class="link">Books</a>
+                <a href="" class="link">Categories</a> -->
+
+                <a href="/" class="link">Home</a>
+                <a href="/user/membership-packages" class="link">Membership</a>
+                <a href="" class="link">Classes</a>
+                <div class="log_link">
+                    <% if(my_session.loggedin == true){ %>
+                        <a href="/auth/logout" class="link"><i class="fa-solid fa-user-large"></i>Log out</a>
+                    <% }else{ %>
+                        <a href="/auth/user" class="link"><i class="fa-solid fa-user-large"></i>Log in</a>
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+
+        <section class="sect1">
+            <div class="heading">
+                <span style="font-size: 5vw; font-weight: 100;">WE <I style="font-weight: 400;">TURN</I></span><br><span style="font-size: 5.5vw; font-weight: 400; color: rgb(221, 21, 21)"> QUITTERS</span></br>
+                <span style="font-size: 4vw; font-weight: 100;">INTO </span><span style="color: rgb(255, 255, 255); font-size: 5vw; font-weight: 300; color: rgb(246, 164, 0); font-family: 'Fredoka One', cursive;">WINNERS</span></span></span>
+                <div class="social_links">
+                    <div class="social_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div class="social_icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="social_icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                </div>
+                <div class="btnLinkContain">
+                    <a href="/auth/user" class="btn_link">JOIN US</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sect2">
+            <div class="left">
+                <img src="https://snapcrack.com/wp-content/uploads/2022/01/running_girl-copy.png" alt="">
+                <div class="txt">
+                    <span style="font-weight: 300;">YOU <B>START</B></span><br>
+                    <span style="font-weight: 300;">YOUR FITNESS</span><br>
+                    <b>JOURNEY</b><br>
+                    <span style="font-weight: 300;">& WE'LL HELP</span><br>
+                    <b>YOU FINISH IT</b>
+                </div>
+                <span class="diamond"></span>
+            </div>
+            <div class="right">
+                <table class="sect2_tbl">
+                    <tr>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/185/185590.png" alt=""></th>
+                        <td>
+                            <h1>STRENGTH</h1>
+                            <p>Strength training or resistance training is the use of resistance to muscular contraction to build the strength, anaerobic endurance and size of skeletal muscles.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><img src="https://cdn-icons.flaticon.com/png/512/185/premium/185599.png?token=exp=1654323982~hmac=bf7f60a9269a8946c5fc10cd452204b3" alt=""></th>
+                        <td>
+                            <h1>CARDIO</h1>
+                            <p>Cardiovascular fitness or aerobic training is exercises such as walking, running, swimming, cycling, cross trainer, spin bike and much more.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><img src="https://cdn-icons.flaticon.com/png/512/5480/premium/5480669.png?token=exp=1654326321~hmac=e76be039c8c02a258724419de3e32e8a" alt=""></th>
+                        <td>
+                            <h1>FITNESS</h1>
+                            <p>General fitness training works towards broad goals of overall health and well-being, rather than narrow goals of sport competition, larger muscles or concerns over appearance.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/84/84081.png" alt=""></th>
+                        <td>
+                            <h1>MEDITATION</h1>
+                            <p>ART OF LIVING Master classes and Group Meditation sessions provide excellent Tips and Techniques to finding True Happiness and Inner Peace. </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="mshp_pkgs">
+            <h1 class="mship_heding">MEMBERSHIP | <span style="color: rgb(197, 11, 11);">PACKAGES</span></h1>
+            <div class="cards_contain">
+                <div class="pkgs">
+                    <i id="standard" class="fas fa-user"></i>
+                    <h1 class="stdr">Standard-Membership</h1>
+                    <p>Our Standard Gym Members get:</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                    <p><i class="fa-solid fa-xmark" style="color: red;"></i> Pool & Gym Access for 30 days</p>
+                    <p><i class="fa-solid fa-xmark" style="color: red;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+                </div>
+                <div class="pkgs">
+                    <i id="gold" class="fas fa-user"></i>
+                    <h1 class="gld">Gold-Membership</h1>
+                    <!-- <p>Lorem ipsum dolor sit amet. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+                    <p>Become a Gold Member and get:</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Pool & Gym Access for 30 days</p>
+                    <p><i class="fa-solid fa-xmark" style="color: red;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+                </div>
+                <div class="pkgs">
+                    <i id="platinum" class="fas fa-user"></i>
+                    <h1 class="pltn">Platinum-Membership</h1>
+                    <!-- <p>Lorem ipsum dolor sit amet. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+                    
+                    <p>It Doesn't Get Better Than This:</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Pool & Gym Access for 30 days</p>
+                    <p><i class="fa-solid fa-check" style="color: green;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+                </div>
+            </div>
+        </section>
+
+            <footer>
+                <section>
+                    <div class="one">
+                      <h1>Caf Info</h1><br>
+                      <a href="#">About the caf</a>
+                      <a href="#">Menu</a>
+                      <a href="#">Food Quality</a>
+                      <a href="#">News & Press</a>
+                    </div>
+
+                    <div class="two">
+                      <h1>My Caf</h1><br>
+                      <a href="#">Caf app</a>
+                      <a href="#">Gift cards</a>
+                      <a href="#">Reload card</a>
+                      <a href="#">Check card balance</a>
+                    </div>
+
+                    <div class="three">
+                      <h1>Careers</h1><br>
+                      <a href="#">Careers home</a>
+                      <a href="#">Opportunities</a>
+                      <a href="#">Apply</a>
+                    </div>
+
+                    <div class="four">
+                      <h1>Caf cares</h1><br>
+                      <a href="#">Nutrition Explorer</a>
+                      <a href="#">Privacy Policy</a>
+                      <a href="#">Caf foundation</a>
+                      <a href="#">Diversity</a>
+                    </div>
+                </section>
+
+                <a href="/admin">ad</a>
+            </footer>
+        
+    </body>
+</html>

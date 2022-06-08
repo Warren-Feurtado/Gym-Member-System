@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/usr_membership.css' />
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+      
+  </head>
+    <body>
+        <nav>
+            <a href="/">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                        alt="logo">
+                    </div>
+                </div>
+            </a>
+          
+            <div class="nav_links">
+                <a href="/" class="link">Home</a>
+                <a href="/user/membership-packages" class="link">Membership</a>
+                <a href="" class="link">Classes</a>
+                <div class="log_link">
+                    <% if(my_session.loggedin == true){ %>
+                        <a href="/auth/logout" class="link"><i class="fa-solid fa-user-large"></i>Log out</a>
+                    <% }else{ %>
+                        <a href="/auth/user" class="link"><i class="fa-solid fa-user-large"></i>Log in</a>
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+        
+        <h1 style="margin: 5vw 0 2vw 0; text-align: center; color: white;">Amber Fitness Membership Packages</h1>
+        <section class="mbr_pkgs">
+            <div class="pkgs_contain">
+                <% if(data.length){
+                    for(var i = 0; i < data.length; i++){%>
+                        <div class="pkg">
+                            <h3 class="<%= data[i].mshp_nm %> mship_ttl" style="color: rgb(255, 255, 255)"><%= data[i].mshp_nm %> Membership</h3>
+                            <h1 class="price">J$<%= data[i].mshp_prc %></h1>
+                            <p>per month</p><br>
+                            <% if(my_session.mbrshp_id == data[i].id && my_session.mbrshp_sts == 1){%>
+                                <a href=""><button class="btn_link2 btn_disabled" href="" disabled style="color: rgb(36, 211, 27);  text-shadow:  0px 0px 2px rgba(0, 0, 0, 0.519);">Active</button></a>
+                            <%} else{%>
+                            <a href=""><button class="btn_link2" href="">Sign Up</button></a>
+                            <%}%>
+                            <h4>WHAT YOU GET</h4>
+    
+                            <% if(data.length && data[i].mshp_nm === 'Standard'){%>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                                <p><i class="fa-solid fa-xmark" style="color: red;"></i> Pool & Gym Access for 30 days</p>
+                                <p><i class="fa-solid fa-xmark" style="color: red;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+
+                            <%}else if(data.length && data[i].mshp_nm === 'Gold'){%>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Pool & Gym Access for 30 days</p>
+                                <p><i class="fa-solid fa-xmark" style="color: red;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+                                
+                           <%}else{%>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Gym Access for 30 days.</p>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Pool & Gym Access for 30 days</p>
+                                <p><i class="fa-solid fa-check" style="color: green;"></i> Gym & Pool Access + Free Classes for 30 days</p>
+                            <%}%>
+                        </div>
+                    <%}
+                    }else{%>
+                        <h2>no info</h2>
+                <%}%>
+            </div>
+        </section>
+
+    </body>
+</html>    

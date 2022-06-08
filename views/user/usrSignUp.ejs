@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/signUp.css' />
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                    alt="logo">
+                </div>
+                <!-- <div class="logo_txt">
+                    <span style="font-size: 1.2vw;">
+                        b.fit
+                    </span>
+                    <span style="font-size: 1.6vw;">
+                        Gym
+                    </span>
+                    <h2 style="font-size: 1vw;">
+                        School Library
+                    </h2>
+                </div> -->
+            </div>
+        </a>
+
+        <!-- <div class="search">
+            <input type="search" placeholder="Type to search">
+        </div> -->
+      
+        <div class="nav_links">
+            <!-- <a href="/admin/books" class="link">Books</a>
+            <a href="" class="link">Categories</a> -->
+
+            <a href="/" class="link">Home</a>
+            <a href="/user/membership-packages" class="link">Membership</a>
+            <a href="" class="link">Classes</a>
+            <div class="log_link">
+                <% if(my_session.loggedin == true){ %>
+                    <a href="/auth/logout" class="link"><i class="fa-solid fa-user-large"></i>Log out</a>
+                <% }else{ %>
+                    <a href="/auth/user" class="link"><i class="fa-solid fa-user-large"></i>Log in</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="body_contain">
+        <div class="left">
+            <img src="https://pngimg.com/uploads/fitness/fitness_PNG141.png" alt="">
+            <span class="diamond"></span>
+        </div>
+        <div class="right">
+            <form action="/user/save" method="post">
+                <h1>Sign Up</h1>
+                <div class="inptFlex">
+                    <div class="inptBx">
+                        <label for="usr_fnm">First Name <span style="color: red;">*</span></label><br>
+                        <input type="text" id="usr_fnm" name="fname" placeholder="First name">
+                    </div>
+                    <div class="inptBx">
+                        <label for="usr_lnm">Last Name <span style="color: red;">*</span></label><br>
+                        <input type="text" id="usr_lnm" name="lname" placeholder="Last Name">
+                    </div>
+                </div>
+                
+                <div class="inptBx">
+                    <label for="usr_email">Email <span style="color: red;">*</span></label><br>
+                    <input type="email" id="usr_email" name="email" placeholder="Email Address">
+                </div>
+                <div class="inptBx">
+                    <label for="usr_pss">Password <span style="color: red;">*</span></label><br>
+                    <input type="password" id="usr_pss" name="password" placeholder="Password">
+                </div>
+                <div class="inptBx">
+                    <label for="usr_dob">Date of Birth <span style="color: red;">*</span></label><br>
+                    <input type="date" id="usr_dob" name="dob" placeholder="Date Of Birth">
+                </div>
+                <div><label>Gender</label></div>
+                <div class="inptFlex">
+                    <div class="inptBx">
+                        <label for="male" class="gndr_type">Male <span style="color: red;">*</span></label>
+                        <input type="radio" id="male" name="gender" value="1">
+                    </div>
+                    <div class="inptBx">
+                        <label for="female" class="gndr_type">Female <span style="color: red;">*</span></label>
+                        <input type="radio" id="female" name="gender" value="2">
+                    </div>
+                </div>
+                <div class="inptBx">
+                    <label for="phone">Phone Number <span style="color: red;">*</span></label><br>
+                    <input type="text" id="phone" name="phone" placeholder="Contact Number">
+                </div>
+                <div class="inptBx">
+                    <label for="adrs">Home Address <span style="color: red;">*</span></label><br>
+                    <textarea type="text" id="adrs" name="adrs" placeholder="Enter your home address"></textarea>
+                </div>
+
+                <button class="frm_btn" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign up</button>
+                <span>Already a Member? <a href="/auth/user">Log in Here.</a></span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

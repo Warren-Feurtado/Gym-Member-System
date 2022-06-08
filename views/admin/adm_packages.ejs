@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/admHome.css">
+    <link rel="stylesheet" href="/stylesheets/tables.css">
+    <script src="https://kit.fontawesome.com/d1a2b3af9c.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="body_contain">
+        <!--------- DASHBOARD MENU --------->
+        <section class="dash_menu ">
+            <a href="/" class="links">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="https://dynamic.brandcrowd.com/asset/logo/1dc5b5aa-ab05-473f-ae83-eac50095370a/logo-search-grid-1x?v=637865665811100000&text=amber+fitness+&colorpalette=grayscale"
+                        alt="logo">
+                    </div>
+                </div>
+            </a>
+            <div class="profil_info">
+                <div class="profile_photo">
+                    <img src="https://images.unsplash.com/photo-1627161684458-a62da52b51c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=549&q=80" alt="">
+                </div>
+                <span><%= my_session.adm_fnm %> <%= my_session.adm_lnm %></span>
+                <h4>Admin</h4>
+            </div>
+            <div class="dash_opts">
+                
+                <details class="option">
+                    <summary><a href="/admin"><i class="fa-solid fa-house-user"></i>Dashboard</a></summary>
+                </details>
+
+                <details class="option">
+                    <summary><a href="/admin/members" title="View All Members"><i class="fa-solid fa-users"></i>Members</a></summary>
+                </details>
+
+                <details class="option">
+                    <summary><i class="fa-solid fa-clipboard"></i>Membership<i class="fas fa-angle-down"></i></summary>
+                    <p><a href="/admin/manage-packages" title="Add a New Membership Package"><i class="fa-solid fa-circle-plus"></i> Manage Packages</a></p>
+                </details>
+
+                <details class="option">
+                    <summary><a href="" title="View and Manage All Classes"><i class="fa-solid fa-child-reaching"></i>Classes</a></summary>
+                </details>
+            </div>        
+        </section>
+    
+
+        <!--------- BODY / MAIN --------->
+        <section class="body_main ">
+            <div class="top_bar">
+                <div onclick="hideMenu()" title="Side Bar" class="menu_bars ">
+                <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <h1>Manage Packages</h1>
+
+            <section class="form_ctrl">
+            
+                <form action="/admin/package/save" method="post" class="pkgRegForm">
+                    <h3 style="text-align: center; color: white;margin-top: 2vw;">Add a Package</h3>
+                    <div class="table-contain">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><label for="mshp_nm">Membership Title</label></th>
+                                    <th><label for="gym_acs">Gym Access</label></th>
+                                    <th><label for="pool_acs">Pool Access</label></th>
+                                    <th><label for="free_class">Free Classes</label></th>
+                                    <th><label for="mshp_dur">Duration</label></th>
+                                    <th><label for="mshp_prc">Price</label></th>
+                                    <th><label for="">Action</label></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="mshp_nm" name="mshp_nm" placeholder="Membership Name ">
+                                    </td>
+                                    <td>
+                                        <select name="gym_acs" id="gym_acs">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="pool_acs" id="pool_acs">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="free_class" id="free_class">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="mshp_dur" name="mshp_dur" placeholder="Duration (in days) ">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="mshp_prc" name="mshp_prc" placeholder="Membership Price ">
+                                    </td>
+                                    <td>
+                                        <button type="submit" title="Save Book"><i class="fa-solid fa-cloud-arrow-up"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </section>
+            <br><br><br>
+            <h3 style="text-align: center; color: white;margin-top: 2vw;">Packages List</h3>
+            <div class="table-contain">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID#</th>
+                            <th>Membership Name</th>
+                            <th>Gym Access</th>
+                            <th>Pool Access</th>
+                            <th>Free Classes</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(data.length){
+               
+                            for(var i = 0; i< data.length; i++) {%>  
+                                <tr>
+                                    <th><%= data[i].id %></th>
+                                    <td><%= data[i].mshp_nm%></td>
+                                    <td><%= data[i].gym_acs%></td>
+                                    <td><%= data[i].pool_acs%></td>
+                                    <td><%= data[i].free_class%></td>
+                                    <td><%= data[i].mshp_dur%></td>
+                                    <td>J$ <%= data[i].mshp_prc%></td>
+                                    <td>
+                                        <a href="/admin/edit-package/<%=data[i].id%>" title="Edit this Packages details"><i class="fa-solid fa-pencil"></i></a>                                                                                       
+                                        <a href="/admin/delete-package/<%=data[i].id%>" title="Delete this Package from list"><i class="fa-solid fa-trash-can"></i></a>                                            
+                                    </td>
+                                </tr>
+                            <% }
+                        }else{ %>
+                            <tr>
+                                <td colspan="7"><h2>No Membership Packages Found</h2>
+                                    <div>
+                                        <img src="https://assets.materialup.com/uploads/c83a9663-be0b-4397-b1af-67f520e44ef1/preview.png" alt="">
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    <script>
+        function hideMenu(){
+            document.querySelector('.dash_menu').classList.toggle('showHide');
+            document.querySelector('.body_main').classList.toggle('width_adjust');
+        }
+    </script>
+</body>
+</html>

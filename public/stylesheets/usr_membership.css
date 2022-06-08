@@ -1,0 +1,83 @@
+
+body{
+    background-image: radial-gradient(circle at 52% 37%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 15%,transparent 15%, transparent 65%,transparent 65%, transparent 100%),radial-gradient(circle at 70% 3%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 33%,transparent 33%, transparent 62%,transparent 62%, transparent 100%),radial-gradient(circle at 38% 28%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 15%,transparent 15%, transparent 94%,transparent 94%, transparent 100%),radial-gradient(circle at 12% 92%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 1%,transparent 1%, transparent 19%,transparent 19%, transparent 100%),radial-gradient(circle at 50% 84%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 28%,transparent 28%, transparent 96%,transparent 96%, transparent 100%),radial-gradient(circle at 11% 43%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 20%,transparent 20%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 45% 11%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 19%,transparent 19%, transparent 65%,transparent 65%, transparent 100%),radial-gradient(circle at 90% 54%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 11%,transparent 11%, transparent 19%,transparent 19%, transparent 100%),radial-gradient(circle at 23% 100%, hsla(165,0%,91%,0.05) 0%, hsla(165,0%,91%,0.05) 35%,transparent 35%, transparent 86%,transparent 86%, transparent 100%),linear-gradient(0deg, rgb(95, 19, 0),rgb(187, 23, 4));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.mbr_pkgs{
+    width: 100vw;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbr_pkgs .pkgs_contain{
+    width: 85%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mbr_pkgs .pkgs_contain .pkg{
+    width: 30%;
+    background: white;
+    margin: 2vw 1vw;
+    text-align: center;
+    padding: 2vw;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 3px rgba(49, 49, 49, 0.382);
+}
+
+.mship_ttl{
+    background: rgb(0, 0, 0);
+}
+
+.Standard{
+    background: rgb(163, 68, 0);
+    color: rgb(0, 0, 0);
+}
+.Gold{
+    background: rgb(157, 107, 0);
+    color: rgb(0, 0, 0);
+}
+
+.Platinum{
+    background: rgb(132, 132, 132);
+    color: rgb(0, 0, 0);
+}
+
+.pkg h3{
+    width: 100%;
+    font-size: 1.5vw;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.766);
+    margin-bottom: 2vw;
+    border-radius: 5px;
+}
+
+.pkg h1{
+    font-size: 3vw;
+    color: rgb(186, 14, 14);
+    margin-bottom: -0.8vw;
+}
+
+.btn_link2{
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.pkg h4{
+    font-size: 1.2vw;
+    /* line-height: 2; */
+    margin-top: 2vw;
+}
+
+.pkg p{
+    margin: 1vw 0;
+    font-size: 1.1vw;
+}
