@@ -1,0 +1,14 @@
+PLEASE NOTE:
+
+The link to Admin LogIn Page is located in the red Diamond shape,
+ in the center of the User Login Page.
+
+ "/Admin" may also take you straight to the admin page.
+
+ Adding or deleting a membership Package in the Admin Dashboard will also affect the View on The Membership Page.
+
+ Depending on What Membership a Logged In MEMBER has, the "Active" button appears on the respective Membership Card and is deactivated, instead of an active "sign up" button.
+
+ Each New Memeber is AUTOMATICALLY assigned the Standard Membership upon SUccessful Membership Registration.
+
+ If no user is logged in, all Membership Cards display a "Sign Up" button.
